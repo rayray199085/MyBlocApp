@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_bloc_app/blocs/authentication/authentication_cubit.dart';
 import 'package:my_bloc_app/widgets/custom_app_page.dart';
 
 class HomeView extends StatelessWidget {
@@ -20,11 +22,24 @@ class HomeView extends StatelessWidget {
             )
           ],
         ),
-        body: Center(
+        body: Padding(
+          padding: const EdgeInsets.all(15),
           child: Column(
-            children: const [
-              Text('Username: '),
-              Text('Password: '),
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              BlocBuilder<AuthenticationCubit, AuthenticationState>(
+                builder: (context, state) {
+                  return Text('Username: ${state.username}');
+                },
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              BlocBuilder<AuthenticationCubit, AuthenticationState>(
+                builder: (context, state) {
+                  return Text('Token: ${state.token}');
+                },
+              ),
             ],
           ),
         ),

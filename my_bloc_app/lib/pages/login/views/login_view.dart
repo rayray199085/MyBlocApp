@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_bloc_app/blocs/authentication/authentication_cubit.dart';
 import 'package:my_bloc_app/pages/login/bloc/login_cubit.dart';
 import 'package:my_bloc_app/widgets/widgets.dart';
 
@@ -9,8 +10,9 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authCubit = context.read<AuthenticationCubit>();
     return BlocProvider(
-      create: (context) => LoginCubit(),
+      create: (context) => LoginCubit(authCubit),
       child: const LoginForm(),
     );
   }
