@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_bloc_app/login/bloc/login_cubit.dart';
+import 'package:my_bloc_app/pages/login/bloc/login_cubit.dart';
 import 'package:my_bloc_app/widgets/widgets.dart';
 
 class LoginView extends StatelessWidget {
@@ -88,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
                   child: BlocListener<LoginCubit, LoginState>(
                     listener: (context, state) {
                       if (state.status == LoginStatus.complete) {
-                        Navigator.of(context).pushNamed('/home');
+                        Navigator.of(context).pushReplacementNamed('/home');
                       }
                     },
                     child: BlocBuilder<LoginCubit, LoginState>(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_bloc_app/home/home.dart';
-import 'package:my_bloc_app/login/login.dart';
+import 'package:my_bloc_app/pages/home/home.dart';
+import 'package:my_bloc_app/pages/login/login.dart';
 
 class MyBlocApp extends StatelessWidget {
   const MyBlocApp({Key? key}) : super(key: key);

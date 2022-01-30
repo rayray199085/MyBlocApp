@@ -10,6 +10,15 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Home'),
+          actions: [
+            IconButton(
+              onPressed: () =>
+                  Navigator.of(context).pushReplacementNamed('/login'),
+              icon: const Icon(
+                Icons.logout,
+              ),
+            )
+          ],
         ),
         body: Center(
           child: Column(
