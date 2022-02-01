@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_bloc_app/blocs/authentication/authentication_cubit.dart';
-import 'package:my_bloc_app/widgets/custom_app_page.dart';
+import 'package:my_bloc_app/widgets/widgets.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -40,6 +40,10 @@ class HomeView extends StatelessWidget {
                   return Text('Token: ${state.token}');
                 },
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              const CountDownButton(),
             ],
           ),
         ),

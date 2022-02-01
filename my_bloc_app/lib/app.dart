@@ -30,7 +30,7 @@ class MyBlocApp extends StatelessWidget {
           '/login': (context) => const LoginView(),
           '/home': (context) => const HomeView(),
         },
-        home: const LoginView(),
+        home: const HomeView(),
       ),
     );
   }
