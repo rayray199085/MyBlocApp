@@ -2,7 +2,7 @@ part of 'count_down_button_cubit.dart';
 
 enum CountDownStatus {
   initialized,
-  processing,
+  inProgress,
   completed,
 }
 

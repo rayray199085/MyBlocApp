@@ -24,7 +24,7 @@ class CountDownButtonCubit extends Cubit<CountDownButtonState> {
         if (currentCount >= 0) {
           emit(state.copyWith(
             count: currentCount,
-            status: CountDownStatus.processing,
+            status: CountDownStatus.inProgress,
           ));
         } else {
           _resetTimer();

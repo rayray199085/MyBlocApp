@@ -22,14 +22,14 @@ class CountDownView extends StatelessWidget {
     return BlocBuilder<CountDownButtonCubit, CountDownButtonState>(
       builder: (context, state) {
         return ElevatedButton(
-          onPressed: () => state.status != CountDownStatus.processing
+          onPressed: () => state.status != CountDownStatus.inProgress
               ? context.read<CountDownButtonCubit>().startCounting()
               : null,
           child: Column(
             children: [
               if (state.status == CountDownStatus.initialized)
                 const Text('Send')
-              else if (state.status == CountDownStatus.processing)
+              else if (state.status == CountDownStatus.inProgress)
                 Text('${state.count}s')
               else if (state.status == CountDownStatus.completed)
                 const Text('Resend')
